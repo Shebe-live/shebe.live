@@ -30,7 +30,8 @@
 		"format": "prettier --plugin-search-dir=. --write .",
 		"lint": "eslint .",
 		"pre-commit": "lint-staged",
-		"prepare": "husky install"
+		"prepare": "husky install",
+		"tinacms": "tinacms"
 	},
 	"dependencies": {
 		"@astrojs/rss": "4.0.1",

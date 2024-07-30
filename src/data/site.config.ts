@@ -10,7 +10,7 @@ interface SiteConfig {
 
 export const siteConfig: SiteConfig = {
 	author: 'Krinchaboy', // Site author
-	title: 'ШэБэ Медиа', // Site title.
+	title: 'ШЭБЭ Медиа', // Site title.
 	description: 'Рассказываем о главном в социальных сетях', // Description to display in the meta tags
 	lang: 'ru-RU',
 	ogLocale: 'ru_RU',

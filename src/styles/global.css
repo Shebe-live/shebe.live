@@ -38,3 +38,24 @@
 .shadow {
 	box-shadow: -5px 3px 8px 1px rgba(0, 0, 0, 0.12);
 }
+
+/* logo */
+
+.logo {
+	width: 100px;
+	height: auto;
+	object-fit: contain;
+}
+
+.logo path {
+  fill: #0C090A;
+}
+.logo ellipse {
+  fill: #FFBE98;
+}
+
+.dark .logo path {
+  fill: #F8F9FA;
+}
+
+/* end logo */

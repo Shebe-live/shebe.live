@@ -11,9 +11,9 @@ export function remarkReadingTime() {
 
 		function minutesWord(minutes: Number) {
 			if (minutes === 1) {
-				return `Время чтения: ${minutes} минута`;
+				return `Время чтения: ${minutes} минута`
 			} else if (Number(minutes) < 5) {
-				return `Время чтения: ${minutes} минуты`;
+				return `Время чтения: ${minutes} минуты`
 			}
 
 			return `Время чтения: ${minutes} минут`

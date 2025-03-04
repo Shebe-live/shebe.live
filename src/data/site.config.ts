@@ -9,7 +9,7 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-	author: 'Krinchaboy', // Site author
+	author: 'Редакция', // Site author
 	title: 'ШЭБЭ Медиа', // Site title.
 	description: 'Рассказываем о главном в социальных сетях', // Description to display in the meta tags
 	lang: 'ru-RU',

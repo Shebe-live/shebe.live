@@ -2,16 +2,20 @@
 import { sluglify } from '@/utils'
 
 const { name, activeCategory } = Astro.props
-const currentPath = Astro.url.pathname
 const unsluglifyNameCategory = sluglify(name.toLowerCase())
 
-const isActive =
-	activeCategory?.toLocaleLowerCase() === unsluglifyNameCategory ||
-	(currentPath === '/' && name === 'Всё')
+const isActive = activeCategory?.toLocaleLowerCase() === unsluglifyNameCategory
 ---
 
-<a
-	href={sluglify(`/category/${unsluglifyNameCategory}/1`)}
->
+<a class=`${isActive && 'is-active'}` href={sluglify(`/category/${unsluglifyNameCategory}/1`)}>
 	{name}
 </a>
+
+<style>
+	a {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #000;
+		font-size: 14px;
+	}
+</style>

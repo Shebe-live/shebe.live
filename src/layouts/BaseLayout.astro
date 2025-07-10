@@ -17,13 +17,13 @@ const { title, description, image, articleDate } = Astro.props
 	</head>
 
 	<body>
-		<main
-			class='px-5 sm:mx-auto sm:max-w-2xl sm:px-8 lg:px-0 antialiased md:max-w-6xl grid gap-12 mt-4 overflow-hidden md:overflow-visible'
-		>
-			<Header />
-			<slot />
-			<Footer />
+		<main>
+			<div class="container">
+				<Header />
+				<slot />
+			</div>
 		</main>
+		<Footer />
 		<TwSizeIndicator />
 		<EditBlog />
 	</body>

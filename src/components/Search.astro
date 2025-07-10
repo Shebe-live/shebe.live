@@ -6,7 +6,7 @@ import SearchIcon from '@/components/icons/SearchIcon'
 ---
 
 <site-search id='search' class='ms-auto'>
-	<button data-open-modal disabled class='flex items-center justify-center rounded-md gap-1'>
+	<button class="search" data-open-modal disabled>
 		<SearchIcon />
 		<!-- <span class='md:hidden text-2xl'> Search</span> -->
 	</button>
@@ -123,12 +123,15 @@ import SearchIcon from '@/components/icons/SearchIcon'
 	customElements.define('site-search', SiteSearch)
 </script>
 
-<style is:global>
-	.dark {
-		--pagefind-ui-primary: #eeeeee;
-		--pagefind-ui-text: #eeeeee;
-		--pagefind-ui-background: #152028;
-		--pagefind-ui-border: #152028;
-		--pagefind-ui-tag: #152028;
+<style>
+	.search {
+		background-color: transparent;
+		border: none;
+		margin: 0;
+		padding: 0;
+
+		width: 20px;
+		height: 18px;
+		display: block;
 	}
 </style>

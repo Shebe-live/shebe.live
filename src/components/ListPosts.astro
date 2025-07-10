@@ -4,27 +4,47 @@ import PostCard from '@/components/PostCard'
 
 type Props = {
 	posts: CollectionEntry<'blog'>[]
-	FirstBig?: boolean
 }
 
-const { posts, FirstBig = false } = Astro.props
+const { posts } = Astro.props
+
+// todo: return
+// const renderedPosts: CollectionEntry<'blog'>[] = await Promise.all(posts.map(async (post) => post))
+let renderedPosts: CollectionEntry<'blog'>[] = await Promise.all(posts.map(async (post) => post))
+renderedPosts = [...renderedPosts, ...renderedPosts]
+
+function chunkArray(array: CollectionEntry<'blog'>[], size: number) {
+	const chunks = []
+	for (let i = 0; i < array.length; i += size) {
+		chunks.push(array.slice(i, i + size))
+	}
+	return chunks
+}
+
+const chunks = chunkArray(renderedPosts, 6)
 ---
 
-<section
-	class=`grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  gap-8 mt-3`
->
+<section>
 	{
-		posts.map(async (post) => {
-			const { remarkPluginFrontmatter } = await post.render()
-
-			return (
-				<PostCard
-					id={post.id}
-					data={post.data}
-					slug={post.slug}
-					readTime={remarkPluginFrontmatter.minutesRead}
-				/>
-			)
-		})
+		chunks.map((chunk) => (
+			<div class='post-group'>
+				{chunk.map((post) => (
+					<PostCard id={post.id} data={post.data} slug={post.slug} />
+				))}
+			</div>
+		))
 	}
 </section>
+
+<style>
+	section {
+		display: grid;
+		grid-gap: 25px;
+	}
+
+	.post-group {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 25px;
+	}
+</style>

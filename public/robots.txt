@@ -1,4 +1,6 @@
 User-agent: *
-Allow: /
+Disallow: /
+# todo: return
+# Allow: /
 
 Sitemap: https://shebe.live/sitemap-index.xml
